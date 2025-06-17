@@ -1,0 +1,152 @@
+/* ContactForm.css (Versión Adaptada para 2 Columnas) */
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita barras de scroll por las animaciones */
+}
+
+.contact-card {
+  width: 100%;
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  
+  /* --- ESTILOS PARA LAS 2 COLUMNAS --- */
+  display: flex;
+  gap: 40px; /* Espacio entre las columnas */
+  align-items: flex-start; /* Alinea los items al inicio */
+}
+
+/* --- COLUMNA IZQUIERDA: INFO --- */
+.contact-info {
+  flex: 1 1 40%; /* Ocupa el 40% del espacio, flexible */
+  color: var(--text-color);
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: var(--text-color);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.schedule-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.schedule-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.schedule-list li i {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.map-container {
+  width: 100%;
+  height: 250px; /* Altura fija para el mapa */
+  border-radius: 8px;
+  overflow: hidden; /* Esconde los bordes del iframe */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- COLUMNA DERECHA: FORMULARIO --- */
+.contact-form-wrapper {
+  flex: 1 1 60%; /* Ocupa el 60% del espacio, flexible */
+  text-align: center;
+}
+
+.contact-form-wrapper h2 {
+  margin-bottom: 10px;
+}
+
+/* --- ESTILOS HEREDADOS (YA EXISTENTES) --- */
+.contact-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text-color);
+  font-family: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.light-theme .contact-form label { color: rgba(0, 0, 0, 0.7); }
+.light-theme .contact-form input, .light-theme .contact-form textarea { border-color: #ccc; background-color: #fff; }
+
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: background-color 0.3s, transform 0.2s; width: 100%; margin-top: 10px; }
+.btn-submit { background-color: var(--primary-color); color: white; }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-whatsapp { background-color: #25D366; color: white; }
+.btn-whatsapp i { margin-right: 10px; font-size: 1.2rem; }
+.divider { display: flex; align-items: center; text-align: center; margin: 30px 0; color: var(--text-color); opacity: 0.5; }
+.divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid var(--text-color); opacity: 0.3; }
+.divider:not(:empty)::before { margin-right: 1em; }
+.divider:not(:empty)::after { margin-left: 1em; }
+.status-message { margin-top: 20px; padding: 12px; border-radius: 8px; font-weight: 500; }
+.status-message.success { background-color: rgba(37, 211, 102, 0.1); color: #25D366; }
+.status-message.error { background-color: rgba(211, 47, 47, 0.1); color: #ef5350; }
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 992px) {
+  .contact-card {
+    flex-direction: column; /* Apila las columnas verticalmente */
+    padding: 30px;
+  }
+
+  .contact-info, .contact-form-wrapper {
+    flex-basis: auto; /* Resetea la base flexible */
+    width: 100%;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .schedule-list li {
+    justify-content: center;
+  }
+}
