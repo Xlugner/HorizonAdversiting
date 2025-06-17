@@ -30,19 +30,17 @@ export const Hero: FC<Props> = ({ theme }) => {
               <h2 className="highlight">Impulsar Tu Marca</h2>
             </div>
             <p className="description">
-              PromoJhonny'S es una agencia de marketing digital que ayuda
+              Horizon Adversiting es una agencia de marketing digital que ayuda
             a las empresas a crecer en línea mediante servicios como SEO, 
             marketing en redes sociales y publicidad PPC. 
             Estamos comprometidos con la innovación y ofrecemos 
             estrategias orientadas a resultados para nuestros clientes.
             </p>
             <div className="hero__btns">
-              <button className="primary__btn">
-                Empiece Ahora
-              </button>
-              <button className="secondary__btn">
-                Sobre Nosotros
-              </button>
+            <a href="#paquetes" className="primary__btn">
+            Empiece Ahora
+            </a>
+            <a href="#about" className="secondary__btn">Sobre Nosotros</a>
             </div>
           </div>
           <div className="hero__img">
