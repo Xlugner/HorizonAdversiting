@@ -100,7 +100,7 @@ export const Header: FC<Props> = ({ theme, changeTheme }) => {
         <div className="nav__wrapper">
           <div className="logo">
             <h2>
-              <a href="#">Horizon Adversiting</a>
+              <a href="#">HorizonAd</a>
             </h2>
           </div>
           <div
