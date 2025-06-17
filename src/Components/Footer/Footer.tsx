@@ -70,14 +70,11 @@ export const Footer = () => {
               transition: 'all 1s ease-out 0.5s',
             }}
           >
-            <h2>FutureMedia</h2>
+            <h2>Horizon Adversiting</h2>
             <p className="description footer__desc">Grow with us</p>
             <p className="small__text description">
-              "Grow with Us" is more than just an invitation to take
-              advantage of our range of services - it's a promise of
-              partnership and growth. At our company, we are dedicated
-              to providing personalized solutions that help businesses
-              and individuals achieve their goals.
+              Agencia de Publicidad 
+              Emprende y crece con nosotros
             </p>
           </div>
           <div
@@ -109,7 +106,7 @@ export const Footer = () => {
         </div>
         <p className="copyright">
           Copyright© {year}, developed by{' '}
-          <a href="https://github.com/xroobix">RooB</a>. All rights
+          <a href="https://www.instagram.com/horizon_adversiting/">HorizonAdversiting</a>. All rights
           reserved.
         </p>
       </div>

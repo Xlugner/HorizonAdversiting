@@ -13,8 +13,8 @@ export const Header: FC<Props> = ({ theme, changeTheme }) => {
       display: 'Inicio',
     },
     {
-      path: '#projects',
-      display: 'Proyectos',
+      path: '#portafolio',
+      display: 'Portafolio',
     },
     {
       path: '#services',
@@ -25,8 +25,8 @@ export const Header: FC<Props> = ({ theme, changeTheme }) => {
       display: 'Sobre Nosotros',
     },
     {
-      path: '#blog',
-      display: 'Blog',
+      path: '#contacto',
+      display: 'Contacto',
     },
   ];
 
@@ -100,7 +100,7 @@ export const Header: FC<Props> = ({ theme, changeTheme }) => {
         <div className="nav__wrapper">
           <div className="logo">
             <h2>
-              <a href="#">PromoJhonny'S</a>
+              <a href="#">Horizon Adversiting</a>
             </h2>
           </div>
           <div
