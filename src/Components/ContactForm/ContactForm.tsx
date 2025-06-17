@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import './ContactForm.css'; // Importamos los estilos actualizados
+import './ContactForm.css';
 import 'remixicon/fonts/remixicon.css';
 
 // Las interfaces no cambian
@@ -12,7 +12,7 @@ interface FormData {
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 export const ContactForm = () => {
-  // El estado se mantiene igual
+  // La lógica del estado y el envío se mantiene igual
   const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<SubmissionStatus>('idle');
 
@@ -21,28 +21,22 @@ export const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // --- FUNCIÓN handleSubmit ACTUALIZADA ---
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
-
     try {
-      // Ya está tu URL de Formspree correcta.
-      const response = await fetch('https://formspree.io/f/xeokkokw', { 
+      const response = await fetch('https://formspree.io/f/xeokkokw', {
         method: 'POST',
         headers: {
-          // AÑADIDO: 'Accept' es importante para que Formspree devuelva una respuesta correcta.
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify(formData),
       });
-
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        // Si la respuesta no es OK, intentamos ver el error que devuelve Formspree
         const data = await response.json();
         console.error("Error de Formspree:", data);
         setStatus('error');
@@ -53,14 +47,20 @@ export const ContactForm = () => {
     }
   };
 
-  // Variantes de animación para las columnas
+  // --- VARIANTE DE ANIMACIÓN CORREGIDA ---
+  // Ahora la variante "visible" es una función que acepta un índice (i)
+  // para crear un retraso escalonado (staggered delay).
   const columnVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: (i: number) => ({
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }
-    },
+      transition: {
+        delay: i * 0.2, // El retraso ahora está aquí
+        duration: 0.6,
+        ease: 'easeOut'
+      }
+    }),
   };
 
   return (
@@ -68,9 +68,10 @@ export const ContactForm = () => {
       <div className="container">
         <div className="contact-card">
 
-          {/* --- COLUMNA IZQUIERDA: INFORMACIÓN Y MAPA --- */}
+          {/* --- COLUMNA IZQUIERDA --- */}
           <motion.div 
             className="contact-info"
+            custom={0} // Índice 0, tendrá un retraso de 0s
             variants={columnVariants}
             initial="hidden"
             whileInView="visible"
@@ -99,38 +100,40 @@ export const ContactForm = () => {
             </div>
           </motion.div>
 
-          {/* --- COLUMNA DERECHA: FORMULARIO --- */}
+          {/* --- COLUMNA DERECHA --- */}
           <motion.div 
             className="contact-form-wrapper"
+            custom={1} // Índice 1, tendrá un retraso de 0.2s
             variants={columnVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, delay: 0.2 }}
+            // El viewport ahora está limpio, sin el 'delay' incorrecto
+            viewport={{ once: true }}
           >
             <h2>Hablemos de tu Proyecto</h2>
             <p className="subtitle">
               Completa el formulario o contáctanos por WhatsApp.
             </p>
             <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group">
-                <label htmlFor="name">Nombre</label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required placeholder="Tu nombre completo"/>
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required placeholder="ejemplo@correo.com"/>
-              </div>
-              <div className="form-group">
-                <label htmlFor="message">Mensaje</label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={5} placeholder="Cuéntanos sobre tu idea o negocio..."></textarea>
-              </div>
-              
-              <motion.button type="submit" className="btn btn-submit" disabled={status === 'submitting'} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                {status === 'submitting' ? 'Enviando...' : 'Enviar Mensaje'}
-              </motion.button>
+                <div className="form-group">
+                    <label htmlFor="name">Nombre</label>
+                    <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required placeholder="Tu nombre completo"/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required placeholder="ejemplo@correo.com"/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="message">Mensaje</label>
+                    <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={5} placeholder="Cuéntanos sobre tu idea o negocio..."></textarea>
+                </div>
+                
+                <motion.button type="submit" className="btn btn-submit" disabled={status === 'submitting'} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    {status === 'submitting' ? 'Enviando...' : 'Enviar Mensaje'}
+                </motion.button>
 
-              {status === 'success' && <p className="status-message success">¡Mensaje enviado! Gracias por contactarnos.</p>}
-              {status === 'error' && <p className="status-message error">Hubo un error al enviar el mensaje. Inténtalo de nuevo.</p>}
+                {status === 'success' && <p className="status-message success">¡Mensaje enviado! Gracias por contactarnos.</p>}
+                {status === 'error' && <p className="status-message error">Hubo un error al enviar el mensaje. Inténtalo de nuevo.</p>}
             </form>
 
             <div className="divider"><span>O</span></div>
@@ -146,4 +149,5 @@ export const ContactForm = () => {
     </section>
   );
 };
+
 
