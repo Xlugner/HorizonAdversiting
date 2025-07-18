@@ -71,7 +71,7 @@ export const Footer = () => {
             }}
           >
             <h2>Horizon Adversiting</h2>
-            <p className="description footer__desc">Grow with us</p>
+            <p className="description footer__desc">Sobre Nosotros</p>
             <p className="small__text description">
               Agencia de Publicidad 
               Emprende y crece con nosotros

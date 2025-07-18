@@ -1,15 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import './PricingPackages.css'; // Asegúrate de usar el nuevo archivo CSS
-import 'remixicon/fonts/remixicon.css';
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import "./PricingPackages.css";
+import "remixicon/fonts/remixicon.css";
 
-// La interfaz y los datos se mantienen igual
 interface Package {
-  name: string;
-  price: string;
-  description: string;
-  features: string[];
-  isFeatured?: boolean;
+    name: string;
+    price: string;
+    description: string;
+    features: string[];
+    isFeatured?: boolean;
 }
 
 const pricingData: Package[] = [
@@ -76,72 +75,118 @@ const pricingData: Package[] = [
   }
 ];
 
+const cubaPackages: Package[] = [
+    {
+        name: "Paquete Cuba Básico",
+        price: "1500 CUP",
+        description: "Ideal para negocios cubanos que inician.",
+        features: [
+            "Gestión de 1 Red Social",
+            "10 Publicaciones al Mes",
+            "Soporte por WhatsApp",
+            "Reporte Mensual"
+        ]
+    },
+    {
+        name: "Paquete Cuba Premium",
+        price: "3500 CUP",
+        description: "Para empresas cubanas que buscan crecer.",
+        features: [
+            "Gestión de 2 Redes Sociales",
+            "20 Publicaciones al Mes",
+            "Campaña de Anuncios Locales",
+            "Reporte Quincenal"
+        ],
+        isFeatured: true
+    }
+    // Puedes agregar más paquetes específicos para Cuba aquí
+];
 
 export const PricingPackages = () => {
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.15,
-        duration: 0.5,
-        ease: 'easeOut',
-      }
-    })
-  };
+    const [isCuba, setIsCuba] = useState(false);
 
-  return (
-    <section className="pricing-section" id="paquetes">
-      <div className="container">
-        <div className="pricing-header">
-          <h2 className="section-title">Paquetes a tu Medida</h2>
-          <p className="subtitle">Elige el plan que impulse tu negocio al siguiente nivel.</p>
-        </div>
-        
-        <div className="pricing-grid">
-          {pricingData.map((pkg, index) => (
-            <motion.div
-              key={pkg.name}
-              className={`pricing-card ${pkg.isFeatured ? 'featured' : ''}`}
-              custom={index}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <div className="card-border-glow"></div>
-              {pkg.isFeatured && <div className="featured-badge">Más Popular</div>}
-              
-              <div className="card-header">
-                <h3>{pkg.name}</h3>
-                <p className="price">{pkg.price}
-                  {pkg.price !== 'Personalizado' && <span>/mes</span>}
-                </p>
-                <p className="card-description">{pkg.description}</p>
-              </div>
+    useEffect(() => {
+        const fetchCountry = async () => {
+            try {
+                const res = await fetch("https://ipapi.co/json/");
+                const data = await res.json();
+                setIsCuba(data.country_name === "Cuba");
+            } catch {
+                setIsCuba(false);
+            }
+        };
+        fetchCountry();
+    }, []);
 
-              <ul className="features-list">
-                {pkg.features.map(feature => (
-                  <li key={feature}>
-                    <i className="ri-check-double-line"></i> {feature}
-                  </li>
-                ))}
-              </ul>
+    const packagesToShow = isCuba ? cubaPackages : pricingData;
 
-              <motion.a 
-                href="#contacto" 
-                className="btn btn-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Elegir Plan
-              </motion.a>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+    const cardVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: (i: number) => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: i * 0.15,
+                duration: 0.5,
+                ease: "easeOut"
+            }
+        })
+    };
+
+    return (
+        <section className="pricing-section" id="paquetes">
+            <div className="container">
+                <div className="pricing-header">
+                    <h2 className="section-title">Paquetes a tu Medida</h2>
+                    <p className="subtitle">
+                        {isCuba
+                            ? "Precios exclusivos para Cuba (CUP)."
+                            : "Elige el plan que impulse tu negocio al siguiente nivel."}
+                    </p>
+                </div>
+                <div className="pricing-grid">
+                    {packagesToShow.map((pkg, index) => (
+                        <motion.div
+                            key={pkg.name}
+                            className={`pricing-card ${pkg.isFeatured ? "featured" : ""}`}
+                            custom={index}
+                            variants={cardVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                        >
+                            <div className="card-border-glow"></div>
+                            {pkg.isFeatured && (
+                                <div className="featured-badge">Más Popular</div>
+                            )}
+                            <div className="card-header">
+                                <h3>{pkg.name}</h3>
+                                <p className="price">
+                                    {pkg.price}
+                                    {pkg.price !== "Personalizado" && <span>/mes</span>}
+                                </p>
+                                <p className="card-description">{pkg.description}</p>
+                            </div>
+                            <ul className="features-list">
+                                {pkg.features.map(feature => (
+                                    <li key={feature}>
+                                        <i className="ri-check-double-line"></i> {feature}
+                                    </li>
+                                ))}
+                            </ul>
+                            <motion.a
+                                href="#contacto"
+                                className="btn btn-primary"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                Elegir Plan
+                            </motion.a>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 };
 
