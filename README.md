@@ -19,7 +19,7 @@
 
 ### Links
 
-- Live Site Preview: [@Netlify](https://future-media.netlify.app)
+- Live Site Preview: [@Netlify](https://agencyhorizonadversiting.netlify.app)
 
 ### Built with
 
