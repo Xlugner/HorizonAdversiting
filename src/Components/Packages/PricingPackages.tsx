@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./PricingPackages.css";
 import "remixicon/fonts/remixicon.css";
-import { ContactForm } from "../ContactForm/ContactForm";
 
 interface Package {
     name: string;
@@ -14,66 +13,66 @@ interface Package {
 
 const pricingData: Package[] = [
     {
-    name: 'Paquete Esencial',
-    price: '$150',
-    description: 'Perfecto para startups y negocios que recién comienzan.',
-    features: [
-      'Gestión de 1 Red Social',
-      '12 Publicaciones al Mes',
-      'Diseño Gráfico Básico',
-      'Reporte Mensual de Rendimiento',
-      'Soporte por Correo'
-    ],
-  },
-  {
-    name: 'Paquete Crecimiento',
-    price: '$300',
-    description: 'Ideal para pequeñas empresas que buscan expandir su alcance.',
-    features: [
-      'Gestión de 2 Redes Sociales',
-      '20 Publicaciones al Mes',
-      'Diseño Gráfico Avanzado',
-      'Campaña de Anuncios Básica',
-      'Reporte Quincenal'
-    ],
-    isFeatured: true, // El paquete destacado
-  },
-  {
-    name: 'Paquete Profesional',
-    price: '$500',
-    description: 'Para empresas establecidas que necesitan una estrategia sólida.',
-    features: [
-      'Gestión de 3 Redes Sociales',
-      '30 Publicaciones al Mes',
-      'Creación de Contenido de Video (1)',
-      'Gestión de Campañas de Anuncios',
-      'Optimización SEO On-Page'
-    ],
-  },
-  {
-    name: 'Paquete Premium',
-    price: '$800',
-    description: 'Solución completa para marcas que buscan dominar su nicho.',
-    features: [
-      'Gestión de 4 Redes Sociales',
-      'Contenido Ilimitado',
-      'Producción de Video y Fotografía',
-      'Estrategia de Email Marketing',
-      'Soporte Prioritario 24/7'
-    ],
-  },
-  {
-    name: 'Paquete Corporativo',
-    price: 'Personalizado',
-    description: 'Una solución a medida para grandes corporaciones.',
-    features: [
-      'Todo lo del Paquete Premium',
-      'Consultoría Estratégica Dedicada',
-      'Desarrollo Web y Mantenimiento',
-      'Relaciones Públicas Digitales',
-      'Análisis de Competencia Avanzado'
-    ],
-  }
+        name: "Paquete Esencial",
+        price: "$150",
+        description: "Perfecto para startups y negocios que recién comienzan.",
+        features: [
+            "Gestión de 1 Red Social",
+            "12 Publicaciones al Mes",
+            "Diseño Gráfico Básico",
+            "Reporte Mensual de Rendimiento",
+            "Soporte por Correo"
+        ]
+    },
+    {
+        name: "Paquete Crecimiento",
+        price: "$300",
+        description: "Ideal para pequeñas empresas que buscan expandir su alcance.",
+        features: [
+            "Gestión de 2 Redes Sociales",
+            "20 Publicaciones al Mes",
+            "Diseño Gráfico Avanzado",
+            "Campaña de Anuncios Básica",
+            "Reporte Quincenal"
+        ],
+        isFeatured: true
+    },
+    {
+        name: "Paquete Profesional",
+        price: "$500",
+        description: "Para empresas establecidas que necesitan una estrategia sólida.",
+        features: [
+            "Gestión de 3 Redes Sociales",
+            "30 Publicaciones al Mes",
+            "Creación de Contenido de Video (1)",
+            "Gestión de Campañas de Anuncios",
+            "Optimización SEO On-Page"
+        ]
+    },
+    {
+        name: "Paquete Premium",
+        price: "$800",
+        description: "Solución completa para marcas que buscan dominar su nicho.",
+        features: [
+            "Gestión de 4 Redes Sociales",
+            "Contenido Ilimitado",
+            "Producción de Video y Fotografía",
+            "Estrategia de Email Marketing",
+            "Soporte Prioritario 24/7"
+        ]
+    },
+    {
+        name: "Paquete Corporativo",
+        price: "Personalizado",
+        description: "Una solución a medida para grandes corporaciones.",
+        features: [
+            "Todo lo del Paquete Premium",
+            "Consultoría Estratégica Dedicada",
+            "Desarrollo Web y Mantenimiento",
+            "Relaciones Públicas Digitales",
+            "Análisis de Competencia Avanzado"
+        ]
+    }
 ];
 
 const cubaPackages: Package[] = [
@@ -149,7 +148,6 @@ interface PricingPackagesProps {
 
 export const PricingPackages: React.FC<PricingPackagesProps> = ({ onChoosePlan }) => {
     const [isCuba, setIsCuba] = useState(false);
-    const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchCountry = async () => {
@@ -247,7 +245,6 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onChoosePlan }
                     ))}
                 </div>
             </div>
-            
         </section>
     );
 };
