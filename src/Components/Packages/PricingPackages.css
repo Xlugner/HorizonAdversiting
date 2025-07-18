@@ -158,3 +158,21 @@
     transform: scale(1);
   }
 }
+
+.selected-package {
+    color: var(--selected-package-color, #4a2fe3);
+    background: var(--selected-package-bg, transparent);
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* Modo oscuro */
+body.dark-mode .selected-package,
+.selected-package.dark {
+    color: #fff;
+    background: #222;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./PricingPackages.css";
 import "remixicon/fonts/remixicon.css";
+import { ContactForm } from "../ContactForm/ContactForm";
 
 interface Package {
     name: string;
@@ -142,8 +143,13 @@ const cubaPackages: Package[] = [
     }
 ];
 
-export const PricingPackages = () => {
+interface PricingPackagesProps {
+    onChoosePlan: (packageName: string) => void;
+}
+
+export const PricingPackages: React.FC<PricingPackagesProps> = ({ onChoosePlan }) => {
     const [isCuba, setIsCuba] = useState(false);
+    const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchCountry = async () => {
@@ -171,6 +177,12 @@ export const PricingPackages = () => {
                 ease: "easeOut"
             }
         })
+    };
+
+    const handleChoosePlan = (packageName: string) => {
+        onChoosePlan(packageName);
+        const contactSection = document.getElementById("contacto");
+        if (contactSection) contactSection.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
@@ -227,6 +239,7 @@ export const PricingPackages = () => {
                                 className="btn btn-primary"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
+                                onClick={() => handleChoosePlan(pkg.name)}
                             >
                                 Elegir Plan
                             </motion.a>
@@ -234,6 +247,7 @@ export const PricingPackages = () => {
                     ))}
                 </div>
             </div>
+            
         </section>
     );
 };

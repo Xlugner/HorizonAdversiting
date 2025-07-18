@@ -11,9 +11,17 @@ interface FormData {
 }
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
-export const ContactForm = () => {
+interface ContactFormProps {
+    packageName?: string;
+}
+
+export const ContactForm: React.FC<ContactFormProps> = ({ packageName }) => {
   // La lógica del estado y el envío se mantiene igual
-  const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    message: packageName ? `Quiero el paquete: ${packageName}\n` : ""
+  });
   const [status, setStatus] = useState<SubmissionStatus>('idle');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -114,6 +122,12 @@ export const ContactForm = () => {
             <p className="subtitle">
               Completa el formulario o contáctanos por WhatsApp.
             </p>
+            {packageName && (
+              <div className="selected-package">
+                <i className="ri-gift-line"></i>
+                <strong>Paquete seleccionado:</strong> {packageName}
+              </div>
+            )}
             <form onSubmit={handleSubmit} className="contact-form">
                 <div className="form-group">
                     <label htmlFor="name">Nombre</label>

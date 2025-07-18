@@ -17,6 +17,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
     const [theme, setTheme] = useState<string>('');
+    const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
 
     const changeTheme = () => {
         theme === '' ? setTheme('light-theme') : setTheme('');
@@ -35,10 +36,10 @@ function App() {
                 <Services />
                 <About />
                 <Portfolio />
-                <PricingPackages />
+                <PricingPackages onChoosePlan={setSelectedPackage} />
                 <Blog />
                 <Testimonial />
-                <ContactForm />
+                <ContactForm packageName={selectedPackage ?? undefined} />
             </main>
             <Footer />
         </>
