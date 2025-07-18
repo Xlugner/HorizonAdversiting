@@ -77,29 +77,69 @@ const pricingData: Package[] = [
 
 const cubaPackages: Package[] = [
     {
-        name: "Paquete Cuba Básico",
-        price: "1500 CUP",
+        name: "Paquete Esencial",
+        price: "15000 CUP",
         description: "Ideal para negocios cubanos que inician.",
         features: [
-            "Gestión de 1 Red Social",
-            "10 Publicaciones al Mes",
-            "Soporte por WhatsApp",
-            "Reporte Mensual"
+            "5 Diseños Gráficos basicos, portadas, flyers, etc.",
+            "5 Publicaciones Diarias en hasta 100 grupos de Facebook",
+            "5 flyers promocionales",
+            "5 Publicaciones diarias en Revolico",
+            "Sin influencers"
         ]
     },
     {
-        name: "Paquete Cuba Premium",
-        price: "3500 CUP",
+        name: "Paquete Emprendedor",
+        price: "20000 CUP",
         description: "Para empresas cubanas que buscan crecer.",
         features: [
-            "Gestión de 2 Redes Sociales",
-            "20 Publicaciones al Mes",
-            "Campaña de Anuncios Locales",
-            "Reporte Quincenal"
+            "8 Diseños Gráficos, portadas, flyers, etc.",
+            "8 Publicaciones Diarias en hasta 100 grupos de Facebook",
+            "6 flyers promocionales",
+            "6 Publicaciones diarias en Revolico",
+            "Sin influencers"
         ],
         isFeatured: true
+    },
+    {
+        name: "Paquete Profesional",
+        price: "25000 CUP",
+        description: "Ideal para negocios cubanos que buscan ser Profesionales.",
+        features: [
+            "12 Diseños Gráficos, portadas, flyers, etc.",
+            "10 Publicaciones Diarias en hasta 200 grupos de Facebook",
+            "7 flyers promocionales",
+            "6 Publicaciones diarias en Revolico",
+            "1 influencer de hasta 3000 seguidores",
+            "Asesoria personalizada"
+        ]
+    },
+    {
+        name: "Paquete Empresarial",
+        price: "30000 CUP",
+        description: "Para empresas cubanas consolidadas.",
+        features: [
+            "18 Diseños Gráficos, portadas, flyers, etc.",
+            "12 Publicaciones Diarias en hasta 300 grupos de Facebook",
+            "8 flyers promocionales",
+            "7 Publicaciones diarias en Revolico",
+            "2 influencer de hasta 50 000 seguidores",
+            "Segmentacion de Mercado Objetivo"
+        ]
+    },
+    {
+        name: "Paquete Elite",
+        price: "35000 CUP",
+        description: "Para marcas cubanas que buscan la excelencia.",
+        features: [
+            "25 Diseños Gráficos premium, portadas, flyers, etc.",
+            "15 Publicaciones Diarias en hasta 500 grupos de Facebook",
+            "10 flyers promocionales",
+            "8 Publicaciones diarias en Revolico",
+            "3 influencer de hasta 100 000 seguidores",
+            "Plan de Marketing, Monitorización y Optimización"
+        ]
     }
-    // Puedes agregar más paquetes específicos para Cuba aquí
 ];
 
 export const PricingPackages = () => {
@@ -170,7 +210,15 @@ export const PricingPackages = () => {
                             <ul className="features-list">
                                 {pkg.features.map(feature => (
                                     <li key={feature}>
-                                        <i className="ri-check-double-line"></i> {feature}
+                                        <i className="ri-check-double-line"></i>{" "}
+                                        {feature === "Sin influencers" ? (
+                                            <>
+                                                <i className="ri-user-unfollow-line" style={{ marginRight: 4 }}></i>
+                                                {feature}
+                                            </>
+                                        ) : (
+                                            feature
+                                        )}
                                     </li>
                                 ))}
                             </ul>
