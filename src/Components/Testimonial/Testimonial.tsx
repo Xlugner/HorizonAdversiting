@@ -1,9 +1,13 @@
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Slider from 'react-slick';
-import customer1 from '../../images/ava-1.jpg';
-import customer2 from '../../images/ava-2.jpg';
-import customer3 from '../../images/ava-3.jpg';
+import customer1 from '../../images/customer1.jpeg';
+import customer2 from '../../images/customer2.jpeg';
+import customer3 from '../../images/customer3.jpeg';
+import customer4 from '../../images/customer4.jpeg';
+import customer5 from '../../images/customer5.jpeg';
+import customer6 from '../../images/customer6.jpeg';
+import customer7 from '../../images/customer7.jpeg';
 import { CustomerSlide } from './CustomerSlide';
 import './testimonial.css';
 
@@ -29,25 +33,25 @@ const customerData = [
   {
     name: 'Javier L.',
     description: "Lo que me gusta de Horizon es que trabajan rápido y entienden lo que uno quiere sin dar tanta vuelta. Me han resuelto todo.",
-    image: customer3,
+    image: customer4,
     position: 'Cliente',
   },
   {
     name: 'Camila R.',
     description: "Con ellos me siento tranquila porque siempre están pendientes. Si necesito algo, les escribo y responden enseguida. Mi negocio se ve más profesional.",
-    image: customer2,
+    image: customer5,
     position: 'Cliente',
   },
   {
     name: 'Luis A.',
     description: "La verdad, pensé que era complicado esto de la publicidad, pero con Horizon ha sido fácil y los resultados se notan. Buen equipo.",
-    image: customer3,
+    image: customer7,
     position: 'Cliente',
   },
   {
     name: 'Andrea T.',
     description: "Yo los recomiendo porque trabajan bien, son sinceros y no te venden humo. Mis ventas subieron y eso es lo que importa.",
-    image: customer2,
+    image: customer6,
     position: 'Cliente',
   },
 ];
