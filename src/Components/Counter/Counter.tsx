@@ -3,15 +3,15 @@ import './counter.css';
 
 const counterData = [
   {
-    number: 10,
+    number: 200,
     text: 'Clientes Satisfechos',
   },
   {
-    number: 35,
+    number: 75,
     text: 'Proyectos en accion',
   },
   {
-    number: 76,
+    number: 300,
     text: 'Proyectos Completados',
   },
 ];

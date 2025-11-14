@@ -33,7 +33,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ packageName }) => {
     e.preventDefault();
     setStatus('submitting');
     try {
-      const response = await fetch('https://formspree.io/f/xeokkokw', {
+      const response = await fetch('https://formspree.io/f/xzzydglg', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -152,7 +152,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ packageName }) => {
 
             <div className="divider"><span>O</span></div>
             
-            <motion.a href="https://wa.me/5358014616" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.a href="https://wa.me/5359518974" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <i className="ri-whatsapp-fill"></i>
               Chatear por WhatsApp
             </motion.a>
