@@ -37,7 +37,6 @@ function App() {
                 <About />
                 <Portfolio />
                 <PricingPackages onChoosePlan={setSelectedPackage} />
-                <Blog />
                 <Testimonial />
                 <ContactForm packageName={selectedPackage ?? undefined} />
             </main>

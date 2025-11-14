@@ -1,33 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 :root {
-  --primary-color: rgb(55 156 246);
-  --background-color: #0d1117;
-  --text-color: white;
+  --primary-color: #7c3aed;
+  --background-color: #0f172a;
+  --text-color: #f1f5f9;
   --card-bg: linear-gradient(
-    45deg,
-    rgb(19, 15, 88, 1) 23%,
-    rgba(15, 18, 61, 1) 35%,
-    rgba(11, 41, 69, 1) 80%
+    135deg,
+    rgba(124, 58, 237, 0.1) 0%,
+    rgba(59, 130, 246, 0.1) 100%
   );
   --counter-color: linear-gradient(
-    45deg,
-    #02bba6 30%,
-    rgba(29, 129, 176, 1) 55%,
-    rgba(35, 93, 173, 1) 75%
+    135deg,
+    #06b6d4 0%,
+    #3b82f6 50%,
+    #8b5cf6 100%
   );
 }
 
 .light-theme {
-  --primary-color: #816aff;
-  --counter-color: white;
-  --background-color: white;
-  --text-color: #0d1117;
+  --primary-color: #7c3aed;
+  --counter-color: linear-gradient(
+    135deg,
+    #06b6d4 0%,
+    #3b82f6 50%,
+    #8b5cf6 100%
+  );
+  --background-color: #f8fafc;
+  --text-color: #1e293b;
   --card-bg: linear-gradient(
-    270deg,
-    rgba(189, 243, 255, 1) 29%,
-    rgba(193, 243, 255, 1) 50%,
-    rgba(226, 250, 255, 1) 78%
+    135deg,
+    rgba(124, 58, 237, 0.05) 0%,
+    rgba(59, 130, 246, 0.05) 100%
   );
 }
 

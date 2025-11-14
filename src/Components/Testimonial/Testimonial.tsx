@@ -10,19 +10,19 @@ import './testimonial.css';
 const customerData = [
   {
     name: 'John Lee',
-    description: `"¡No puedo recomendar a PromoJhonny'S lo suficiente! Como CEO de una gran corporación, al principio dudaba en trabajar con una agencia externa. Sin embargo, el equipo de PromoJhonny'S disipó rápidamente mis temores. Fueron profesionales, eficientes y, lo más importante, obtuvieron resultados. Su experiencia en marketing digital nos ayudó a aumentar nuestra presencia en línea y generar más leads que nunca. ¡Definitivamente seguiré utilizando PromoJhonny'S para todas mis necesidades de marketing en el futuro!"`,
+    description: `"¡No puedo recomendar a HorizonAdversiting lo suficiente! Como CEO de una gran corporación, al principio dudaba en trabajar con una agencia externa. Sin embargo, el equipo de HorizonAdversiting disipó rápidamente mis temores. Fueron profesionales, eficientes y, lo más importante, obtuvieron resultados. Su experiencia en marketing digital nos ayudó a aumentar nuestra presencia en línea y generar más leads que nunca. ¡Definitivamente seguiré utilizando HorizonAdversiting para todas mis necesidades de marketing en el futuro!"`,
     image: customer1,
     position: 'CEO, DreamMakers',
   },
   {
     name: 'Sarah Thompson',
-    description: `"¡Estoy encantado de haber elegido a PromoJhonny'S como nuestra agencia de marketing! Desde el primer momento, se tomaron el tiempo para entender nuestros objetivos empresariales y desarrollar una estrategia personalizada. Su equipo siempre está disponible para resolver dudas y dar seguimiento, y han sido clave para aumentar el reconocimiento de nuestra marca y atraer más tráfico a nuestro sitio web. Gracias a su dedicación, hemos logrado hacer crecer nuestro negocio y llegar a nuevos clientes. ¡Recomiendo ampliamente a PromoJhonny'S a cualquier director que busque un partner de marketing confiable y efectivo!"`,
+    description: `"¡Estoy encantado de haber elegido a HorizonAdversiting como nuestra agencia de marketing! Desde el primer momento, se tomaron el tiempo para entender nuestros objetivos empresariales y desarrollar una estrategia personalizada. Su equipo siempre está disponible para resolver dudas y dar seguimiento, y han sido clave para aumentar el reconocimiento de nuestra marca y atraer más tráfico a nuestro sitio web. Gracias a su dedicación, hemos logrado hacer crecer nuestro negocio y llegar a nuevos clientes. ¡Recomiendo ampliamente a HorizonAdversiting a cualquier director que busque un partner de marketing confiable y efectivo!"`,
     image: customer2,
     position: 'CEO, WonderSon',
   },
   {
     name: 'Alexander Ramirez',
-    description: "PromoJhonny'S destaca como la agencia de marketing más competente con la que he colaborado en mi carrera como Consejero Delegado. Su combinación de expertise profesional, enfoque creativo y extraordinaria dedicación ha generado un incremento notable en nuestras métricas de tráfico y conversión. Recomiendo sus servicios sin reservas para empresas que aspiren a la excelencia en marketing digital.",
+    description: "HorizonAdversiting destaca como la agencia de marketing más competente con la que he colaborado en mi carrera como Consejero Delegado. Su combinación de expertise profesional, enfoque creativo y extraordinaria dedicación ha generado un incremento notable en nuestras métricas de tráfico y conversión. Recomiendo sus servicios sin reservas para empresas que aspiren a la excelencia en marketing digital.",
     image: customer3,
     position: 'CEO, RamiTech',
   },
@@ -54,7 +54,7 @@ export const Testimonial = () => {
           <h6 className="subtitle">Testimonios</h6>
           <h2>
             Confían en nosotros más de...
-            <span className="highlight"> 500 clientes!</span>{' '}
+            <span className="highlight"> 76 clientes!</span>{' '}
           </h2>
         </div>
         <div className="slider__wrapper">

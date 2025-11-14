@@ -1,27 +1,27 @@
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import aboutImg from '../../images/about-us.jpg';
+import aboutImg from '../../images/imageAbout.jpeg';
 import { ChoseUs } from './ChoseUs';
 import './about.css';
 
 const chooseData = [
   {
     icon: 'ri-settings-2-line',
-    title: 'Experience and Expertise',
+    title: 'Experiencia y Compromiso',
     description:
-      'Our team has over a decade of experience in the industry, and we pride ourselves on staying up-to-date with the latest developments and trends. We have the expertise to deliver high-quality work that meets your specific needs and exceeds your expectations.',
+      'Con tres años de experiencia en el sector, nuestro equipo combina conocimiento, pasión y actualización constante para ofrecer resultados de alto nivel. Nos mantenemos al día con las últimas tendencias y tecnologías para garantizar que cada proyecto no solo cumpla, sino que supere las expectativas de nuestros clientes.',
   },
   {
     icon: 'ri-team-line',
-    title: 'Personalized Approach',
+    title: 'Enfoque Personalizado',
     description:
-      'We understand that every client is unique, which is why we take a personalized approach to every project. We take the time to understand your goals, objectives, and challenges, and we work closely with you to develop a customized solution that works for your business.',
+      'Cada negocio tiene su propia historia, metas y desafíos. Por eso, trabajamos de forma cercana y personalizada, entendiendo tus necesidades para diseñar soluciones que realmente impulsen tu crecimiento. Creemos que la clave del éxito está en escuchar, planificar y crear contigo, no para ti.',
   },
   {
     icon: 'ri-customer-service-2-line',
-    title: '24/7 Hours support',
+    title: 'Soporte 24/7',
     description:
-      'At our company, we believe that great customer service is essential to building long-term relationships with our clients. We are committed to providing exceptional service, and we always go above and beyond to ensure that our clients are satisfied with our work.',
+      'Sabemos que la confianza se construye con atención y compromiso. Por eso, ofrecemos un servicio de atención continua las 24 horas, los 7 días de la semana, asegurándonos de que siempre tengas nuestro apoyo cuando lo necesites. Nuestro objetivo es que cada cliente se sienta acompañado, valorado y plenamente satisfecho con nuestro trabajo.',
   },
 ];
 

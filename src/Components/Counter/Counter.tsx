@@ -7,11 +7,11 @@ const counterData = [
     text: 'Clientes Satisfechos',
   },
   {
-    number: 350,
+    number: 35,
     text: 'Proyectos en accion',
   },
   {
-    number: 1000,
+    number: 76,
     text: 'Proyectos Completados',
   },
 ];
@@ -26,7 +26,7 @@ export const Counter = () => {
               <h3 className="counter__number">
                 <CountUp
                   end={i.number}
-                  suffix={i.number > 100 ? `+` : `K+`}
+                  suffix={i.number > 100 ? `+` : `+`}
                   separator=""
                   enableScrollSpy={true}
                 />

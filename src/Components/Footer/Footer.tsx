@@ -7,7 +7,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   const quickLinks = [
     {
-      name: 'Solutions',
+      name: 'Soluciones',
       content: [
         {
           path: '#',
@@ -15,41 +15,41 @@ export const Footer = () => {
         },
         {
           path: '#',
-          display: 'Analytics',
+          display: 'Análisis',
         },
         {
           path: '#',
-          display: 'Ecommerce',
-        },
-      ],
-    },
-    {
-      name: 'Support',
-      content: [
-        {
-          path: '#',
-          display: 'Pricing',
-        },
-        {
-          path: '#',
-          display: 'Documentation',
-        },
-        {
-          path: '#',
-          display: 'Guides',
+          display: 'Tienda Online',
         },
       ],
     },
     {
-      name: 'Company',
+      name: 'Soporte',
       content: [
         {
           path: '#',
-          display: 'About',
+          display: 'Precios',
         },
         {
           path: '#',
-          display: 'Jobs',
+          display: 'Documentación',
+        },
+        {
+          path: '#',
+          display: 'Guías',
+        },
+      ],
+    },
+    {
+      name: 'Compañía',
+      content: [
+        {
+          path: '#',
+          display: 'Nosotros',
+        },
+        {
+          path: '#',
+          display: 'Trabajos',
         },
         {
           path: '#',
@@ -105,9 +105,9 @@ export const Footer = () => {
           </div>
         </div>
         <p className="copyright">
-          Copyright© {year}, developed by{' '}
-          <a href="https://www.instagram.com/horizon_adversiting/">HorizonAdversiting</a>. All rights
-          reserved.
+          Copyright© {year}, desarrollado por{' '}
+          <a href="https://www.instagram.com/horizon_adversiting/">HorizonAdversiting</a>. Todos los derechos
+          reservados.
         </p>
       </div>
     </footer>

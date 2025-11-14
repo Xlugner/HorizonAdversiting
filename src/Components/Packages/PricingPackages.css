@@ -30,6 +30,9 @@
   position: relative;
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .pricing-card:hover {
@@ -82,6 +85,28 @@
   padding: 0;
   margin-bottom: 35px;
   flex-grow: 1;
+  max-height: 300px;
+	overflow-y: auto;
+	padding-right: 8px;
+	margin-bottom: 20px;
+}
+
+.features-list::-webkit-scrollbar {
+	width: 6px;
+}
+
+.features-list::-webkit-scrollbar-track {
+	background: rgba(124, 58, 237, 0.1);
+	border-radius: 10px;
+}
+
+.features-list::-webkit-scrollbar-thumb {
+	background: var(--primary-color);
+	border-radius: 10px;
+}
+
+.features-list::-webkit-scrollbar-thumb:hover {
+	background: rgba(124, 58, 237, 0.8);
 }
 
 .features-list li {
