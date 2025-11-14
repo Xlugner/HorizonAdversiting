@@ -33,7 +33,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ packageName }) => {
     e.preventDefault();
     setStatus('submitting');
     try {
-      const response = await fetch('https://formspree.io/f/xzzydglg', {
+      const response = await fetch('https://formspree.io/f/xeokkokw', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -9,22 +9,46 @@ import './testimonial.css';
 
 const customerData = [
   {
-    name: 'John Lee',
-    description: `"¡No puedo recomendar a HorizonAdversiting lo suficiente! Como CEO de una gran corporación, al principio dudaba en trabajar con una agencia externa. Sin embargo, el equipo de HorizonAdversiting disipó rápidamente mis temores. Fueron profesionales, eficientes y, lo más importante, obtuvieron resultados. Su experiencia en marketing digital nos ayudó a aumentar nuestra presencia en línea y generar más leads que nunca. ¡Definitivamente seguiré utilizando HorizonAdversiting para todas mis necesidades de marketing en el futuro!"`,
+    name: 'Adrián C.',
+    description: `"Desde que empecé con Horizon Advertising mis ventas subieron muchísimo. Yo mismo me sorprendí porque en pocas semanas se notó el cambio. Son gente seria y trabajan bien."`,
     image: customer1,
-    position: 'CEO, DreamMakers',
+    position: 'Cliente',
   },
   {
-    name: 'Sarah Thompson',
-    description: `"¡Estoy encantado de haber elegido a HorizonAdversiting como nuestra agencia de marketing! Desde el primer momento, se tomaron el tiempo para entender nuestros objetivos empresariales y desarrollar una estrategia personalizada. Su equipo siempre está disponible para resolver dudas y dar seguimiento, y han sido clave para aumentar el reconocimiento de nuestra marca y atraer más tráfico a nuestro sitio web. Gracias a su dedicación, hemos logrado hacer crecer nuestro negocio y llegar a nuevos clientes. ¡Recomiendo ampliamente a HorizonAdversiting a cualquier director que busque un partner de marketing confiable y efectivo!"`,
-    image: customer2,
-    position: 'CEO, WonderSon',
-  },
-  {
-    name: 'Alexander Ramirez',
-    description: "HorizonAdversiting destaca como la agencia de marketing más competente con la que he colaborado en mi carrera como Consejero Delegado. Su combinación de expertise profesional, enfoque creativo y extraordinaria dedicación ha generado un incremento notable en nuestras métricas de tráfico y conversión. Recomiendo sus servicios sin reservas para empresas que aspiren a la excelencia en marketing digital.",
+    name: 'Daniel M.',
+    description: `"De verdad, desde que empecé con Horizon Advertising mis publicaciones se ven mil veces mejor. Me ayudaron con todo sin complicarme. Súper agradecido."`,
     image: customer3,
-    position: 'CEO, RamiTech',
+    position: 'Cliente',
+  },
+  {
+    name: 'Raquel S.',
+    description: "Yo no sabía nada de marketing, pero ellos me guiaron súper fácil. Noté más mensajes y más movimiento en mis redes desde la primera semana.",
+    image: customer2,
+    position: 'Cliente',
+  },
+  {
+    name: 'Javier L.',
+    description: "Lo que me gusta de Horizon es que trabajan rápido y entienden lo que uno quiere sin dar tanta vuelta. Me han resuelto todo.",
+    image: customer3,
+    position: 'Cliente',
+  },
+  {
+    name: 'Camila R.',
+    description: "Con ellos me siento tranquila porque siempre están pendientes. Si necesito algo, les escribo y responden enseguida. Mi negocio se ve más profesional.",
+    image: customer2,
+    position: 'Cliente',
+  },
+  {
+    name: 'Luis A.',
+    description: "La verdad, pensé que era complicado esto de la publicidad, pero con Horizon ha sido fácil y los resultados se notan. Buen equipo.",
+    image: customer3,
+    position: 'Cliente',
+  },
+  {
+    name: 'Andrea T.',
+    description: "Yo los recomiendo porque trabajan bien, son sinceros y no te venden humo. Mis ventas subieron y eso es lo que importa.",
+    image: customer2,
+    position: 'Cliente',
   },
 ];
 
@@ -54,7 +78,7 @@ export const Testimonial = () => {
           <h6 className="subtitle">Testimonios</h6>
           <h2>
             Confían en nosotros más de...
-            <span className="highlight"> 76 clientes!</span>{' '}
+            <span className="highlight"> 200 clientes!</span>{' '}
           </h2>
         </div>
         <div className="slider__wrapper">
